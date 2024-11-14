@@ -1,0 +1,1085 @@
+.page-portfolio-single {
+  padding-top: 8rem;
+  overflow: hidden;
+
+  @include breakpoint(lg, max) {
+    padding-top: 3.7rem;
+  }
+
+  .breadcrumb {
+    margin-bottom: 3rem;
+
+    @include breakpoint(lg, max) {
+      margin-bottom: 2.7rem;
+    }
+  }
+
+  .h1 {
+    margin-bottom: -8rem;
+    font-weight: 500;
+    font-size: 20rem;
+    line-height: normal;
+    text-align: center;
+    letter-spacing: 1rem;
+
+    @include breakpoint(lg, max) {
+      margin-bottom: -3.5rem;
+      font-size: 8rem;
+    }
+  }
+
+  .page-tags {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin: 0 -1.5rem 6.3rem -1.5rem;
+    padding: 0 2rem;
+    list-style: none;
+    color: white;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    li {
+      &:first-child {
+        margin-left: auto;
+      }
+
+      &:last-child {
+        margin-right: auto;
+      }
+
+      &:not(:first-child) {
+        span {
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: calc(100% - 4rem);
+            width: 100%;
+            height: 100%;
+            border: 0.2rem solid #323747;
+            border-radius: 50rem;
+            z-index: 1;
+
+            @include breakpoint(lg, max) {
+              right: calc(100% - 2rem);
+            }
+          }
+        }
+      }
+    }
+
+    span {
+      position: relative;
+      margin-right: -2rem;
+      margin-left: -2rem;
+      display: inline-block;
+      padding: 4.8rem 9.6rem;
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: -0.052rem;
+      text-decoration: none;
+      border-radius: 50rem;
+      background: rgba(19, 21, 27, 0.33);
+      backdrop-filter: blur(2rem);
+      border: 0.2rem solid #323747;
+      z-index: 1;
+      overflow: hidden;
+
+      @include breakpoint(lg, max) {
+        padding: 1.6rem 3.2rem;
+        font-size: 1.8rem;
+        margin-right: -1rem;
+        margin-left: -1rem;
+      }
+    }
+  }
+
+  .block-content {
+    margin-bottom: 1.6rem;
+    height: 100%;
+    padding: 5.6rem;
+    color: white;
+    background: #111318;
+    border-radius: 1.6rem;
+
+    @include breakpoint(md, max) {
+      padding: 1.6rem;
+    }
+
+    &.mb-0 {
+      margin-bottom: 0;
+    }
+
+    &.pb-0 {
+      padding-bottom: 0;
+    }
+  }
+
+  .two-text-blocks {
+    .block-title {
+      display: block;
+      margin-bottom: 4.3rem;
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: normal;
+      color: $color-primary;
+
+      @include breakpoint(md, max) {
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    .text-holder {
+      max-width: 55.6rem;
+      font-size: 2rem;
+      line-height: 1.5;
+
+      @include breakpoint(md, max) {
+        font-size: 1.6rem;
+        line-height: normal;
+      }
+
+      p {
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+
+    .row {
+      @include set-gutter(1.6rem);
+    }
+
+    [class^="col"] {
+      margin-bottom: 1.6rem;
+
+      @include breakpoint(lg, max) {
+        width: 100%;
+      }
+    }
+
+    .block-content {
+      @include breakpoint(md, max) {
+        padding: 2.4rem 1.6rem;
+      }
+    }
+  }
+
+  .block-logo {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 31.8rem;
+    overflow: hidden;
+    margin-bottom: 16rem;
+
+    @include breakpoint(md, max) {
+      margin-bottom: 6.4rem;
+    }
+
+    svg {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 142.4rem;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.03;
+
+      @include breakpoint(md, max) {
+        width: 140rem;
+      }
+    }
+
+    .icon-holder {
+      @include breakpoint(md, max) {
+        max-width: 20rem;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .block-full-img {
+    margin-bottom: 16rem;
+    min-height: 79rem;
+    background-size: cover;
+    background-position: center;
+
+    @include breakpoint(lg, max) {
+      min-height: 59rem;
+    }
+
+    @include breakpoint(md, max) {
+      min-height: 31.8rem;
+      margin-bottom: 6.4rem;
+    }
+  }
+
+  .block-info {
+    .block-title {
+      margin-bottom: 1.6rem;
+      font-weight: 500;
+      font-size: 6.4rem;
+      line-height: normal;
+
+      @include breakpoint(md, max) {
+        margin-bottom: 2.4rem;
+        font-size: 4rem;
+      }
+    }
+
+    .text-holder {
+      margin-bottom: 4rem;
+      font-size: 2.2rem;
+      line-height: 1.5;
+
+      @include breakpoint(md, max) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .block-marquee {
+    overflow: hidden;
+    margin-bottom: 16rem;
+
+    @include breakpoint(md, max) {
+      margin-bottom: 6.4rem;
+    }
+
+    .marquee-row {
+      &:not(:last-child) {
+        margin-bottom: 3.2rem;
+
+        @include breakpoint(md, max) {
+          margin-bottom: 1.6rem;
+        }
+      }
+
+      > div {
+        display: flex;
+      }
+
+      .marquee-item {
+        padding-right: 3.2rem;
+
+        @include breakpoint(md, max) {
+          padding-right: 1.6rem;
+        }
+
+        .img-holder {
+          position: relative;
+          width: 74.2rem;
+          height: 41.8rem;
+          flex-shrink: 0;
+
+          @include breakpoint(lg, max) {
+            width: 45rem;
+            height: 25rem;
+          }
+
+          @include breakpoint(md, max) {
+            width: 30.8rem;
+            height: 17.6rem;
+          }
+        }
+
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .marquee-row-1 {
+      .marquee-item {
+        .img-holder {
+          position: relative;
+
+          @include breakpoint(lg, min) {
+            width: 74.2rem;
+            height: 41.8rem;
+            flex-shrink: 0;
+          }
+
+          @include breakpoint(md, max) {
+            width: 24.7rem;
+            height: 14.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .js-marquee {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .block_single-marquee {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16rem;
+    background-position: center;
+    background-size: cover;
+    min-height: 81rem;
+    overflow: hidden;
+
+    @include breakpoint(md, max) {
+      min-height: 62.9rem;
+      margin-bottom: 6.4rem;
+    }
+
+    span {
+      display: block;
+      padding: 0 6rem;
+      font-size: 20rem;
+      color: white;
+
+      @include breakpoint(md, max) {
+        padding: 0 2rem;
+        font-size: 6rem;
+      }
+    }
+  }
+
+  .block_next-case {
+    position: relative;
+    overflow: hidden;
+
+    .relative-holder {
+      position: relative;
+    }
+
+    .block-title {
+      display: block;
+      font-size: 3.2rem;
+      color: rgba(255, 255, 255, 0.3);
+      white-space: nowrap;
+
+      @include breakpoint(xl, max) {
+        margin-bottom: 2rem;
+      }
+
+      @include breakpoint(md, max) {
+        text-align: center;
+      }
+
+      br {
+        @include breakpoint(lg, max) {
+          display: none;
+        }
+      }
+    }
+
+    .word-holder {
+      display: block;
+      padding: 0 5rem;
+      text-decoration: none;
+
+      @include breakpoint(md, max) {
+        padding: 0 2.5rem;
+      }
+    }
+
+    .img-holder {
+      position: relative;
+      max-width: 94.4rem;
+      padding-bottom: 43.3%;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+
+      @include breakpoint(lg, max) {
+        margin-left: -$grid-gutter-width * 0.5;
+        margin-right: -$grid-gutter-width * 0.5;
+        padding-bottom: 63.3%;
+      }
+
+      @include breakpoint(sm, max) {
+        padding-bottom: 0;
+        min-height: 27.3rem;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @include breakpoint(lg, min) {
+          border-radius: 0.8rem;
+        }
+      }
+    }
+
+    .marque-content {
+      display: flex;
+    }
+
+    .marquee-holder {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 12rem;
+      display: flex;
+
+      @include breakpoint(md, max) {
+        font-size: 4.8rem;
+      }
+    }
+  }
+
+  .images-block {
+    margin-bottom: 16rem;
+
+    @include breakpoint(md, max) {
+      margin-bottom: 6.4rem;
+    }
+
+    .img-holder {
+      line-height: 0;
+    }
+
+    .img-sm {
+      border-radius: 1.2rem;
+
+      @include breakpoint(md, max) {
+        border-radius: 0.8rem;
+      }
+    }
+
+    .img-md {
+      border-radius: 1.6rem;
+
+      @include breakpoint(md, max) {
+        border-radius: 1.2rem;
+      }
+    }
+
+    .img-w-100 {
+      width: 100%;
+      height: auto;
+    }
+
+    .img-mw-100 {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .img-h-100 {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .row {
+      &.row-mb-1 {
+        margin-bottom: 4rem;
+
+        @include breakpoint(md, max) {
+          margin-bottom: 1.6rem;
+        }
+      }
+    }
+  }
+
+  .images-block-1 {
+    .block-content {
+      @include breakpoint(md, max) {
+        margin-left: -$grid-gutter-width * 0.5;
+        margin-right: -$grid-gutter-width * 0.5;
+        border-radius: 0;
+      }
+    }
+
+    .row-1 {
+      @include set-gutter(2.4rem);
+
+      > [class^="col"] {
+        @include breakpoint(md, max) {
+          width: 100%;
+        }
+
+        &:first-child {
+          @include breakpoint(md, max) {
+            margin-bottom: 1.6rem;
+          }
+        }
+      }
+    }
+
+    .row-2 {
+      @include breakpoint(md, max) {
+        @include set-gutter(1.6rem);
+      }
+    }
+
+    .row-3 {
+      @include set-gutter(1.6rem);
+
+      > [class^="col"] {
+        @include breakpoint(md, max) {
+          width: 100%;
+        }
+
+        &:not(:last-child) {
+          @include breakpoint(md, max) {
+            margin-bottom: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .row-3 {
+      @include breakpoint(lg, min) {
+        @include set-gutter(3.2rem);
+      }
+    }
+  }
+
+  .images-block-2 {
+    .row {
+      @include set-gutter(1.5rem);
+
+      @include breakpoint(md, max) {
+        @include set-gutter(0.8rem);
+      }
+    }
+
+    .row-1 {
+      margin-bottom: 1.6rem;
+
+      @include breakpoint(md, max) {
+        flex-direction: column-reverse;
+        margin-bottom: 0.8rem;
+      }
+
+      > [class^="col"] {
+        &:last-child {
+          @include breakpoint(md, max) {
+            margin-bottom: 0.8rem;
+          }
+        }
+      }
+
+      .inner-row {
+        [class^="col"] {
+          &:nth-child(1),
+          &:nth-child(2) {
+            margin-bottom: 1.4rem;
+
+            @include breakpoint(md, max) {
+              margin-bottom: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+
+    .row-2 {
+      margin-bottom: 1.6rem;
+
+      @include breakpoint(md, max) {
+        margin-bottom: 0.8rem;
+      }
+
+      > [class^="col"] {
+        &:first-child {
+          @include breakpoint(md, max) {
+            margin-bottom: 0.8rem;
+          }
+        }
+      }
+
+      .inner-row {
+        [class^="col"] {
+          &:nth-child(1),
+          &:nth-child(2) {
+            margin-bottom: 1.4rem;
+
+            @include breakpoint(md, max) {
+              margin-bottom: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+
+    .row-1,
+    .row-2 {
+      > [class^="col"] {
+        @include breakpoint(md, max) {
+          width: 100%;
+        }
+      }
+    }
+
+    .row-3 {
+      [class^="col"] {
+        @include breakpoint(sm, max) {
+          width: 50%;
+        }
+
+        &:nth-child(1),
+        &:nth-child(2) {
+          @include breakpoint(sm, max) {
+            margin-bottom: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .img-holder {
+      height: 100%;
+      background: #111318;
+      border-radius: 1.6rem;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .images-block-3 {
+    @include breakpoint(md, max) {
+      overflow: hidden;
+    }
+
+    .row-1 {
+      @include set-gutter(1.6rem);
+      margin-bottom: 1.6rem;
+      flex-wrap: nowrap;
+
+      @include breakpoint(md, min) {
+        width: unset;
+        flex-wrap: wrap;
+      }
+
+      .block-content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: 0;
+
+        @include breakpoint(md, max) {
+          padding-left: 4rem;
+          padding-right: 4rem;
+        }
+      }
+
+      [class^="col"] {
+        @include breakpoint(md, max) {
+          width: 29.6rem;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+
+    .row-2 {
+      @include set-gutter(2.4rem);
+
+      > [class^="col"] {
+        @include breakpoint(md, max) {
+          width: 100%;
+        }
+
+        &:first-child {
+          @include breakpoint(md, max) {
+            margin-bottom: 1.6rem;
+          }
+        }
+      }
+    }
+
+    .row-3 {
+      @include set-gutter(1.6rem);
+    }
+
+    .row-4 {
+      @include breakpoint(lg, min) {
+        @include set-gutter(3.2rem);
+      }
+
+      > [class^="col"] {
+        @include breakpoint(md, max) {
+          width: 100%;
+        }
+
+        &:first-child {
+          @include breakpoint(md, max) {
+            margin-bottom: 0.8rem;
+          }
+        }
+      }
+    }
+
+    .block-content-1 {
+      @include breakpoint(md, max) {
+        margin-bottom: 0;
+        margin-left: -$grid-gutter-width * 2;
+        margin-right: -$grid-gutter-width * 2;
+        border-radius: 0;
+        padding: 0;
+        padding-left: 0;
+        padding-right: 0;
+        background: transparent;
+      }
+
+      .img-holder {
+        @include breakpoint(md, max) {
+          margin-left: -3.5rem;
+          margin-right: -3.5rem;
+        }
+
+        img {
+          @include breakpoint(md, max) {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+
+    .block-content-2 {
+      @include breakpoint(md, max) {
+        margin-left: -$grid-gutter-width * 0.5;
+        margin-right: -$grid-gutter-width * 0.5;
+        border-radius: 0;
+      }
+    }
+
+    .swiper {
+      overflow: visible;
+    }
+  }
+
+  .images-block-4 {
+    .row {
+      @include set-gutter(1.6rem);
+    }
+
+    .row-1 {
+      @include breakpoint(md, max) {
+        @include set-gutter(0);
+      }
+
+      .img-holder {
+        margin-bottom: 1.6rem;
+
+        @include breakpoint(md, max) {
+          margin-bottom: 3.4rem;
+          margin-left: -$grid-gutter-width;
+          margin-right: -$grid-gutter-width;
+          border-radius: 0;
+        }
+      }
+    }
+
+    .row-2 {
+      margin-bottom: 1.6rem;
+
+      [class^="col"] {
+        @include breakpoint(md, max) {
+          width: 100%;
+        }
+
+        &:first-child {
+          @include breakpoint(md, max) {
+            margin-bottom: 2.4rem;
+          }
+
+          .img-holder {
+            @include breakpoint(md, max) {
+              margin-left: -$grid-gutter-width;
+              margin-right: -$grid-gutter-width;
+              border-radius: 0;
+            }
+          }
+        }
+      }
+
+      .block-content {
+        @include breakpoint(md, max) {
+          height: auto;
+          margin-bottom: 2.4rem;
+          padding: 2rem 1.8rem;
+          margin-left: -$grid-gutter-width * 0.5;
+          margin-right: -$grid-gutter-width * 0.5;
+        }
+      }
+    }
+
+    .row-3 {
+      margin-bottom: 1.6rem;
+
+      [class^="col"] {
+        @include breakpoint(md, max) {
+          width: 100%;
+        }
+
+        &:first-child {
+          @include breakpoint(md, max) {
+            margin-bottom: 3.2rem;
+          }
+
+          .img-holder {
+            @include breakpoint(md, min) {
+              height: calc(50% - 0.8rem);
+            }
+
+            @include breakpoint(md, max) {
+              margin-left: -$grid-gutter-width;
+              margin-right: -$grid-gutter-width;
+            }
+          }
+        }
+
+        &:last-child {
+          .block-content {
+            display: flex;
+            justify-content: center;
+
+            @include breakpoint(md, max) {
+              padding-top: 4rem;
+              margin-left: -$grid-gutter-width;
+              margin-right: -$grid-gutter-width;
+            }
+          }
+        }
+      }
+
+      .has-margin {
+        margin-bottom: 1.6rem;
+
+        @include breakpoint(md, max) {
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+
+    .special-block {
+      overflow: hidden;
+
+      @include breakpoint(md, max) {
+        margin-bottom: 0;
+        padding: 0;
+        margin-left: -$grid-gutter-width;
+        margin-right: -$grid-gutter-width;
+        border-radius: 0;
+      }
+
+      .first-row,
+      .second-row {
+        display: flex;
+
+        @include breakpoint(md, min) {
+          flex-wrap: nowrap;
+        }
+
+        @include breakpoint(md, max) {
+          flex-direction: column;
+        }
+      }
+
+      .first-row {
+        @include breakpoint(md, min) {
+          transform: translateX(-50%);
+          margin-bottom: 3.2rem;
+        }
+      }
+
+      .second-row {
+        @include breakpoint(md, min) {
+          transform: translateX(-30%);
+        }
+      }
+
+      .img-holder {
+        // width: 74.4rem;
+        // height: 37rem;
+        flex-shrink: 0;
+
+        @include breakpoint(md, min) {
+          margin-right: 3.2rem;
+        }
+
+        @include breakpoint(md, max) {
+          margin-bottom: 0.8rem;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .images-block-5 {
+    .row-1,
+    .row-2,
+    .swiper {
+      margin-bottom: 4.8rem;
+
+      @include breakpoint(md, max) {
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    .row-1 {
+      .img-holder {
+        @include breakpoint(md, max) {
+          margin-left: -$grid-gutter-width;
+          margin-right: -$grid-gutter-width;
+        }
+      }
+    }
+
+    .swiper-slide {
+      width: 46.4rem;
+      height: 81.8rem;
+
+      @include breakpoint(xxl, max) {
+        width: 36.4rem;
+        height: 61.8rem;
+      }
+
+      @include breakpoint(xl, max) {
+        width: 31.4rem;
+        height: 51.8rem;
+      }
+
+      @include breakpoint(lg, max) {
+        width: 27.4rem;
+        height: 48.2rem;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .row-3 {
+      @include set-gutter(0.8rem);
+
+      @include breakpoint(md, max) {
+        margin-left: -$grid-gutter-width;
+        margin-right: -$grid-gutter-width;
+      }
+
+      [class^="col"] {
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    .container-2 {
+      @include breakpoint(md, max) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  .video-holder {
+    position: relative;
+    max-width: 117.4rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 45.5%;
+    overflow: hidden;
+    border-radius: 3.2rem 3.2rem 0 0;
+
+    @include breakpoint(md, max) {
+      padding-bottom: 57.5%;
+      border-radius: 1.2rem 1.2rem 0 0;
+    }
+
+    .btn-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 27.5rem;
+      height: 27.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(white, 0.08);
+      background-size: 7.7rem;
+      background-repeat: no-repeat;
+      background-position: center;
+      backdrop-filter: blur(2rem);
+      z-index: 1;
+      transition: $transition;
+
+      @include breakpoint(xxl, max) {
+        width: 21.5rem;
+        height: 21.5rem;
+      }
+
+      @include breakpoint(lg, max) {
+        width: 12.5rem;
+        height: 12.5rem;
+      }
+
+      @include breakpoint(md, max) {
+        width: 8rem;
+        height: 8rem;
+      }
+
+      svg {
+        width: 7.7rem;
+
+        @include breakpoint(xxl, max) {
+          width: 5.7rem;
+        }
+
+        @include breakpoint(lg, max) {
+          width: 4.7rem;
+        }
+
+        @include breakpoint(md, max) {
+          width: 2.5rem;
+        }
+      }
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.playing {
+      .btn-play {
+        opacity: 0;
+      }
+    }
+  }
+}

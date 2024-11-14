@@ -1,0 +1,138 @@
+.card-service {
+  position: relative;
+  display: flex;
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+  transition: padding 0.6s;
+  border-bottom: solid 0.1rem rgba(white, 0.1);
+
+  @include breakpoint(md, max) {
+    padding: 3.2rem 1.6rem;
+    border-radius: 1.2rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.08);
+    background: #141516;
+    overflow: hidden;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3.2rem;
+    transition: $transition;
+    background: linear-gradient(270deg, rgba(225, 162, 103, 0) 16.64%, #e4af7f 98.21%);
+    opacity: 0;
+    z-index: -1;
+  }
+
+  .left-side {
+    max-width: 70rem;
+
+    @include breakpoint(md, min) {
+      flex-shrink: 0;
+    }
+  }
+
+  .card-title {
+    margin-bottom: 1.6rem;
+    font-weight: 500;
+    font-size: 4.8rem;
+    line-height: 1.2;
+    color: white;
+
+    @include breakpoint(md, max) {
+      font-size: 2.8rem;
+      line-height: 1.17;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .text-holder {
+    max-width: 59rem;
+    margin-bottom: 1.8rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    letter-spacing: -0.022rem;
+    color: #787878;
+
+    @include breakpoint(md, max) {
+      line-height: 1.18;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .icon-holder {
+    display: flex;
+    transition: $transition;
+
+    @include breakpoint(md, min) {
+      opacity: 0;
+    }
+  }
+
+  .img-holder {
+    position: absolute;
+    width: 50rem;
+
+    a {
+      display: flex;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      opacity: 0;
+      transition: $transition;
+    }
+  }
+
+  .right-side {
+    width: 100%;
+    margin-left: 119px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity $transition;
+    pointer-events: none;
+
+    @include breakpoint(md, max) {
+      display: none;
+    }
+  }
+
+  &:hover {
+    @include breakpoint(md, min) {
+      padding-left: 4rem;
+    }
+
+    .right-side {
+      @include breakpoint(md, min) {
+        pointer-events: all;
+      }
+    }
+
+    .right-side,
+    .icon-holder,
+    .img-holder img,
+    &::before {
+      @include breakpoint(md, min) {
+        opacity: 1;
+      }
+    }
+
+    .text-holder {
+      @include breakpoint(md, min) {
+        color: white;
+      }
+    }
+  }
+}

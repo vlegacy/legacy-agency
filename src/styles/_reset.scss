@@ -1,0 +1,97 @@
+html {
+  font-size: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+* {
+  @include breakpoint(lg, min) {
+    cursor: none !important;
+  }
+}
+
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  min-width: 320px;
+  background-color: $body-bg;
+  background-image: url(#{$images}bg-01.png);
+  background-size: cover;
+  background-position: top center;
+  color: $text-color-base;
+  font: $font-weight-base #{$font-size-base}/ $line-height-base $font-family-base;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.smooth-scroll {
+    overflow: hidden;
+  }
+}
+
+.smooth-scroll {
+  #content-scroll {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+  }
+}
+
+a {
+  color: $links-color-base;
+  transition: $transition;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+button,
+input[type="search"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: none;
+  cursor: pointer;
+  transition: $transition;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner {
+  border: none;
+  padding: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin-top: 0;
+}
+
+.wrapper {
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  display: flex;
+  flex-direction: column;
+}

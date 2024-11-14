@@ -1,0 +1,31 @@
+// vars
+$images: "../images/";
+$fonts: "../fonts/";
+
+// fonts
+$main-font: "DM Sans", sans-serif;
+
+// breakpoints
+$breakpoints: (
+  sm: 575px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px
+);
+
+$grid-gutter-width: 30px;
+
+// color vars
+$color-text: #989898;
+$color-primary: #e5b080;
+
+// base vars
+$text-color-base: $color-text;
+$body-bg: #0d0e0f;
+$font-family-base: $main-font;
+$font-size-base: 1.8rem;
+$font-weight-base: 400;
+$line-height-base: 1.3;
+$links-color-base: inherit;
+$transition: all 0.3s ease;

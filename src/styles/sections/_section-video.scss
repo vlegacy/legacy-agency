@@ -1,0 +1,28 @@
+.section-video {
+  padding-bottom: 13.8rem;
+
+  @include breakpoint(md, max) {
+    padding-bottom: 7.4rem;
+  }
+
+  .video-holder {
+    position: relative;
+    min-height: 69rem;
+    cursor: none;
+    overflow: hidden;
+    border-radius: 0.8rem;
+
+    @include breakpoint(md, max) {
+      min-height: 53.3rem;
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

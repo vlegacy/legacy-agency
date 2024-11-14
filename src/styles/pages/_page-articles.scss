@@ -1,0 +1,91 @@
+.page-articles {
+  padding-top: 9.6rem;
+
+  @include breakpoint(md, max) {
+    padding-top: 2.4rem;
+  }
+
+  .page-title {
+    margin-bottom: 5.6rem;
+    font-weight: 500;
+    font-size: 6.8rem;
+
+    @include breakpoint(lg, max) {
+      font-size: 3.8rem;
+    }
+
+    @include breakpoint(md, max) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .section-articles {
+    @include breakpoint(md, max) {
+      padding-top: 0;
+    }
+
+    .card-article {
+      .right-side {
+        @include breakpoint(md, max) {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+      }
+
+      &.card-animated {
+        opacity: 0;
+      }
+    }
+  }
+
+  .swiper-news {
+    margin-bottom: 10rem;
+
+    @include breakpoint(md, max) {
+      display: none;
+    }
+
+    .swiper-slide {
+      height: auto;
+      transition: $transition;
+
+      .left-side {
+        transition: $transition;
+      }
+
+      &.swiper-slide-prev,
+      &.swiper-slide-next {
+        opacity: 0.16;
+
+        .left-side {
+          opacity: 0;
+        }
+      }
+    }
+
+    .card-article {
+      flex-direction: column-reverse;
+      height: 100%;
+      padding: 0;
+
+      .left-side {
+        display: flex;
+        flex-direction: column;
+        margin-right: 0;
+      }
+
+      .meta-info {
+        margin-top: auto;
+      }
+
+      .img-holder {
+        display: flex;
+        margin-bottom: 3.2rem;
+      }
+
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+}

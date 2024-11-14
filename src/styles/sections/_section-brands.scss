@@ -1,0 +1,47 @@
+.section-brands {
+  padding-top: 10rem;
+  padding-bottom: 23.9rem;
+
+  @include breakpoint(md, max) {
+    display: none;
+  }
+
+  .row {
+    @include set-gutter(2.4rem);
+
+    [class^="col"] {
+      margin-bottom: 2.4rem;
+
+      @include breakpoint(xl, max) {
+        width: 33.33333333%;
+      }
+    }
+  }
+
+  .brands-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 18.1rem;
+    border-radius: 0.8rem;
+    background: rgba(255, 255, 255, 0.02);
+    transition: unset;
+
+    &.text-item {
+      padding: 3.6rem;
+      justify-content: flex-start;
+      align-items: flex-end;
+      font-size: 2rem;
+      line-height: 1.2;
+      letter-spacing: -0.02rem;
+      color: white;
+      background: #e5b080;
+      cursor: pointer;
+      text-decoration: none;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

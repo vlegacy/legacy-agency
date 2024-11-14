@@ -1,0 +1,356 @@
+.contact-form {
+  font-size: 3.6rem;
+  line-height: 2;
+
+  @include breakpoint(lg, max) {
+    margin-bottom: 7.2rem;
+  }
+
+  @include breakpoint(md, max) {
+    font-size: 2.3rem;
+    line-height: 1.46;
+  }
+
+  .p {
+    margin-bottom: 1rem;
+
+    @include breakpoint(md, max) {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  .form-control {
+    &.form-name {
+      @include breakpoint(md, min) {
+        max-width: 41.2rem;
+      }
+    }
+  }
+
+  .customSelect {
+    max-width: 41rem;
+  }
+
+  .custom-select-container,
+  .form-control,
+  .form-select {
+    margin-bottom: 1.5rem;
+
+    @include breakpoint(md, max) {
+      width: 100%;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  .d-xl-none {
+    @include breakpoint(xl, max) {
+      display: none;
+    }
+  }
+
+  .form-label {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+
+    @include breakpoint(md, max) {
+      margin-bottom: 0.8rem;
+      font-size: 2.4rem;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .form-budget {
+    display: flex;
+    flex-direction: column;
+
+    .wpcf7-radio {
+      display: inline-flex;
+      flex-wrap: wrap;
+    }
+
+    .wpcf7-list-item {
+      position: relative;
+      display: inline-flex;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0.8rem;
+      margin-bottom: 0.8rem;
+
+      label {
+        display: inline-flex;
+      }
+
+      input {
+        position: absolute;
+        visibility: hidden;
+
+        + .wpcf7-list-item-label {
+          display: inline-flex;
+          align-items: center;
+          padding: 1.55rem 3.6rem;
+          font-size: 2.4rem;
+          line-height: normal;
+          color: white;
+          border-radius: 50rem;
+          border: 0.1rem solid rgba(255, 255, 255, 0.16);
+          background: rgba(255, 255, 255, 0.04);
+          transition: $transition;
+
+          @include breakpoint(md, max) {
+            width: 10rem;
+            display: flex;
+            justify-content: center;
+            padding: 1.7rem 0.4rem;
+            font-size: 2rem;
+          }
+        }
+
+        &:checked {
+          + .wpcf7-list-item-label {
+            color: #161819;
+            background: white;
+            border-color: white;
+          }
+        }
+      }
+    }
+
+    .budget-list {
+      display: inline-flex;
+      flex-wrap: wrap;
+
+      > p {
+        display: inline-flex;
+        line-height: 0;
+        margin-bottom: 0;
+      }
+    }
+
+    .budget-item {
+      position: relative;
+      display: inline-flex;
+      margin-right: 0.8rem;
+      margin-bottom: 0.8rem;
+
+      input {
+        position: absolute;
+        visibility: hidden;
+
+        + div {
+          display: inline-flex;
+          align-items: center;
+          padding: 1.7rem 3.6rem;
+          font-size: 2.4rem;
+          line-height: normal;
+          color: white;
+          border-radius: 50rem;
+          border: 0.1rem solid rgba(255, 255, 255, 0.16);
+          background: rgba(255, 255, 255, 0.04);
+          transition: $transition;
+
+          @include breakpoint(md, max) {
+            width: 10rem;
+            display: flex;
+            justify-content: center;
+            padding: 1.7rem 0.4rem;
+            font-size: 2rem;
+          }
+        }
+
+        &:checked {
+          + div {
+            color: #161819;
+            background: white;
+            border-color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .form-footer {
+    display: flex;
+
+    @include breakpoint(xl, max) {
+      flex-direction: column;
+    }
+
+    .left-side,
+    .right-side {
+      display: flex;
+      flex-direction: column;
+
+      @include breakpoint(xl, max) {
+        align-items: flex-start;
+      }
+    }
+
+    .right-side {
+      @include breakpoint(xl, min) {
+        padding-left: 4.5rem;
+      }
+
+      @include breakpoint(xl, max) {
+        padding-top: 1.4rem;
+      }
+
+      > p {
+        display: inline-flex;
+        line-height: 0;
+        margin-bottom: 0;
+
+        @include breakpoint(md, max) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .form-file {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    padding: 1.85rem 3.6rem;
+    font-size: 1.8rem;
+    line-height: normal;
+    color: white;
+    border-radius: 50rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    transition: $transition;
+
+    @include breakpoint(md, max) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    input {
+      visibility: hidden;
+      position: absolute;
+    }
+
+    svg {
+      margin-right: 1.6rem;
+    }
+  }
+
+  .submit-btn {
+    position: relative;
+    margin-top: 6.4rem;
+    font-weight: 500;
+    font-size: 3.2rem;
+    color: $color-primary;
+    background: transparent;
+    border: none;
+
+    @include breakpoint(lg, max) {
+      margin-left: 5rem;
+    }
+
+    br {
+      display: none;
+    }
+
+    .btn-circle {
+      position: absolute;
+      z-index: 1;
+      left: 0px;
+      margin-left: -50px;
+      top: 50%;
+      margin-top: -50px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      transition: 0.5s;
+      white-space: nowrap;
+      overflow: hidden;
+      color: #fff;
+      z-index: -1;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+      }
+
+      &::before {
+        z-index: -2;
+        border: 0.4rem solid rgba($color-text, 0.16);
+      }
+    }
+
+    .circle-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      margin-top: -0.55em;
+      transition: 0.5s;
+      opacity: 0;
+
+      @include breakpoint(md, max) {
+        margin-top: -0.58em;
+      }
+
+      svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 1.9rem;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .btn-circle {
+        left: 113%;
+        z-index: 1;
+
+        &::after {
+          z-index: -1;
+          background-color: #111;
+          transition: 0.25s;
+          opacity: 0;
+        }
+      }
+
+      .circle-inner {
+        transform: translateX(-117%);
+        opacity: 1;
+      }
+    }
+  }
+
+  #form-attachment {
+    display: none;
+  }
+
+  .wpcf7-submit {
+    display: none;
+  }
+
+  .wpcf7-not-valid-tip {
+    position: absolute;
+    left: 0;
+    bottom: -3.9rem;
+    font-size: 1.5rem;
+  }
+
+  .wpcf7-response-output {
+    display: none;
+  }
+}

@@ -1,0 +1,99 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  @include breakpoint(lg, max) {
+    display: none;
+  }
+
+  .cursor-inner {
+    position: fixed;
+    top: -0.2rem;
+    left: -0.2rem;
+    z-index: 100;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: $color-primary;
+    pointer-events: none;
+    border-radius: 50%;
+    z-index: 99999;
+  }
+
+  .cursor-border {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    background-color: transparent;
+    background-color: hsla(0, 0%, 79%, 0.2);
+    z-index: 9999;
+    position: absolute;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .cursor-click {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    display: block;
+    position: relative;
+    border-radius: 50%;
+
+    .pulse-click {
+      display: block;
+      background: transparent;
+      width: 0.2rem;
+      height: 0.2rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      border-radius: 50%;
+
+      &.clicked {
+        animation: pulse 2s forwards;
+      }
+    }
+  }
+
+  &.cursor-play {
+    .cursor-border {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23e5b080' class='bi bi-play-fill' viewBox='0 0 16 16'%3E%3Cpath d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'/%3E%3C/svg%3E");
+    }
+  }
+
+  &.cursor-close {
+    .cursor-border {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23e5b080' class='bi bi-x' viewBox='0 0 16 16'%3E%3Cpath d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708'/%3E%3C/svg%3E");
+    }
+  }
+
+  &.custom-cursor {
+    .cursor-inner {
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse {
+    0% {
+      width: 0;
+      height: 0;
+      background: rgba(204, 169, 44, 1);
+    }
+    70% {
+      width: 100%;
+      height: 100%;
+      background: rgba(204, 169, 44, 0);
+    }
+    100% {
+      width: 0;
+      height: 0;
+      background: rgba(204, 169, 44, 0);
+    }
+  }
+}

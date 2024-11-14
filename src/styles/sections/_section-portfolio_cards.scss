@@ -1,0 +1,21 @@
+.section-portfolio_cards {
+  overflow: hidden;
+
+  .row {
+    @include breakpoint(xl, min) {
+      @include set-gutter(12.1rem);
+    }
+
+    [class^="col"] {
+      @include breakpoint(md, max) {
+        width: 100%;
+      }
+
+      &:nth-child(even) {
+        @include breakpoint(md, min) {
+          padding-top: 12rem;
+        }
+      }
+    }
+  }
+}

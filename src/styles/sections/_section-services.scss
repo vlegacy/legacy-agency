@@ -1,0 +1,19 @@
+.section-services {
+  @include breakpoint(md, max) {
+    padding-bottom: 8rem;
+  }
+
+  .card-service {
+    &:first-child {
+      @include breakpoint(md, min) {
+        border-top: solid 0.1rem rgba(white, 0.1);
+      }
+    }
+
+    &:not(:last-child) {
+      @include breakpoint(md, max) {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+}

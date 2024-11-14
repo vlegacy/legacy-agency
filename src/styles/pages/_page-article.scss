@@ -1,0 +1,124 @@
+.page-article {
+  padding-top: 9.4rem;
+
+  @include breakpoint(md, max) {
+    padding-top: 2.4rem;
+  }
+
+  .section-articles {
+    @include breakpoint(md, max) {
+      padding-top: 0;
+    }
+  }
+
+  .link-back {
+    display: inline-flex;
+
+    @include breakpoint(md, min) {
+      margin-bottom: 3rem;
+    }
+
+    @include breakpoint(lg, min) {
+      margin-right: 5.2rem;
+      opacity: 1;
+    }
+
+    .icon-holder {
+      @include breakpoint(md, min) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .content-card {
+    padding: 0 0 16rem 0;
+    flex-direction: column-reverse;
+
+    @include breakpoint(md, max) {
+      padding-bottom: 7.2rem;
+    }
+
+    .left-side {
+      margin-right: 0;
+    }
+
+    .right-side {
+      .inner-holder {
+        @include breakpoint(lg, min) {
+          display: flex;
+          align-items: flex-start;
+        }
+      }
+
+      .inner-right {
+        flex: 1;
+      }
+    }
+
+    .img-holder {
+      margin-bottom: 4.8rem;
+
+      @include breakpoint(md, max) {
+        margin-bottom: 1.6rem;
+      }
+
+      img {
+        height: auto;
+        border-radius: 3.2rem;
+
+        @include breakpoint(md, max) {
+          border-radius: 1.6rem;
+        }
+      }
+    }
+
+    .card-title {
+      display: block;
+      max-width: 101.7rem;
+      font-weight: 500;
+      font-size: 5.6rem;
+
+      @include breakpoint(md, max) {
+        font-size: 2.2rem;
+      }
+
+      @include breakpoint(md, min) {
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    .meta-info {
+      margin-bottom: 8rem;
+
+      @include breakpoint(md, max) {
+        margin-bottom: 4.4rem;
+      }
+
+      .category-link {
+        color: $color-text;
+      }
+    }
+
+    .content-holder {
+      max-width: 94.4rem;
+      margin-left: auto;
+      margin-right: auto;
+      color: rgba(255, 255, 255, 0.8);
+
+      h3,
+      h4 {
+        margin-bottom: 1.6rem;
+        font-weight: 400;
+        color: white;
+      }
+
+      p {
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+          margin-bottom: 3.2rem;
+        }
+      }
+    }
+  }
+}

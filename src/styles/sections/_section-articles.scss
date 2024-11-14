@@ -1,0 +1,28 @@
+.section-articles {
+  padding-top: 10rem;
+
+  @include breakpoint(md, max) {
+    padding-top: 8.3rem;
+  }
+
+  .section-title {
+    max-width: 58.6rem;
+    margin-bottom: 9rem;
+    font-weight: 400;
+    font-size: 6rem;
+    line-height: 1.1;
+
+    @include breakpoint(md, max) {
+      margin-bottom: 2.4rem;
+      font-size: 3.2rem;
+    }
+  }
+
+  .card-article {
+    &:not(:last-child) {
+      @include breakpoint(md, max) {
+        margin-bottom: 3.2rem;
+      }
+    }
+  }
+}

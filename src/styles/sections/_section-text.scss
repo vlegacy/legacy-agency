@@ -1,0 +1,44 @@
+.section-text {
+  padding-bottom: 7.8rem;
+
+  @include breakpoint(md, max) {
+    padding-bottom: 6rem;
+  }
+
+  .text-holder {
+    &.text-before {
+      font-size: 2.8rem;
+      line-height: 1.3;
+      color: $color-primary;
+
+      @include breakpoint(md, max) {
+        margin-bottom: 1.6rem;
+        max-width: 20rem;
+        font-size: 2.4rem;
+        line-height: 1.2;
+      }
+    }
+
+    &.text-main {
+      max-width: 120rem;
+      font-size: 6rem;
+      line-height: 1.2;
+      letter-spacing: -0.022rem;
+
+      @include breakpoint(md, max) {
+        font-size: 3.2rem;
+        line-height: 1.19;
+      }
+
+      span {
+        position: relative;
+        display: inline;
+        -webkit-text-fill-color: rgba(#d9d9d9, 0.32);
+        -webkit-background-clip: text;
+        background-repeat: no-repeat;
+        background-image: linear-gradient(#d9d9d9, #d9d9d9);
+        background-size: 0% 100%;
+      }
+    }
+  }
+}
