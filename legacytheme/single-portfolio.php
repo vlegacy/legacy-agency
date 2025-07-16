@@ -100,6 +100,28 @@ $properties = function_exists('get_fields') ? get_fields() : [];
 		<?php
 		the_content();
 		?>
+		<?php
+		$current_portfolio_id = get_the_ID();
+		$other_portfolio_item = new WP_Query(
+			array(
+				'post_type' => 'portfolio',
+				'posts_per_page' => 1,
+				'orderby' => 'rand',
+				'post__not_in' => array($current_portfolio_id),
+				'post_status' => 'publish',
+			)
+		);
+
+		if ($other_portfolio_item->have_posts()):
+			while ($other_portfolio_item->have_posts()):
+				$other_portfolio_item->the_post();
+				get_template_part('template-parts/portfolio-item');
+			endwhile;
+			wp_reset_postdata();
+		else:
+			echo '<p>No other portfolio items found</p>';
+		endif;
+		?>
 	</div>
 </main><!-- #main -->
 <?php

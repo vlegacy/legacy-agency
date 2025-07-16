@@ -1,0 +1,77 @@
+.section-brands .brands-item {
+  padding: 4rem 7rem;
+}
+
+.section-brands .brands-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.section-services .left-side {
+  flex-grow: 1;
+}
+
+.section-services .right-side {
+  margin-left: 4rem;
+  width: auto;
+}
+
+.wpcf7-captchac {
+  width: 12rem;
+  height: 4rem;
+  transform: translateY(1rem);
+}
+
+.wpcf7-captchar {
+  padding: 2rem 3.2rem;
+  font-weight: 500;
+  font-size: 2.2rem;
+  border-radius: 50rem;
+  color: #fff;
+  background: rgba(217, 217, 217, 0.08);
+  border: none;
+  max-width: 30rem;
+}
+
+.my-capcha {
+  margin-bottom: 3rem;
+}
+
+.my-capcha .wpcf7-not-valid-tip {
+  bottom: -4.2rem;
+}
+
+/* <button class="submit-btn-2">Send request<span class="btn-circle">
+                    <span class="circle-inner">Send request
+                      <svg width="27" height="22" viewBox="0 0 27 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 8.982H22.375V12.326H0V8.982Z" fill="currentColor"></path>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.694 21.839L26.633 10.92L15.694 0L13.192 2.463L21.664 10.92L13.192 19.376L15.694 21.839Z" fill="currentColor"></path>
+                      </svg>
+                    </span>
+                  </span>
+</button> */
+
+.submit-btn-2 {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 3rem 3rem;
+  line-height: normal;
+  color: #fff;
+  text-decoration: none;
+  background: #e5b080;
+  border-radius: 50rem;
+  font-size: 2.8rem;
+  line-height: normal;
+  transition: opacity ease.3s;
+}
+
+.submit-btn-2:hover {
+  opacity: 0.8;
+}
+
+.circle-inner br {
+  display: none;
+}

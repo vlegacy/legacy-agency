@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying posts
  *
@@ -8,6 +9,7 @@
 ?>
 <?php if (is_singular()): ?>
 	<div class="card-article content-card">
+		<div class="card-service-bg"></div>
 		<div class="left-side">
 			<div class="content-holder">
 				<?php the_content(); ?>
@@ -72,6 +74,9 @@
 							echo '<a class="category-link" href="' . esc_url($category_link) . '">' . esc_html($category_name) . '</a>';
 						}
 						?>
+						<div class="like-block">
+							<?php echo do_shortcode('[irecommendthis]'); ?>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -79,6 +84,7 @@
 	</div>
 <?php else: ?>
 	<div class="card-article card-item card-animated">
+		<div class="card-service-bg"></div>
 		<div class="left-side">
 			<?php
 			if (is_singular()):
@@ -133,6 +139,9 @@
 					echo '<a class="category-link" href="' . esc_url($category_link) . '">' . esc_html($category_name) . '</a>';
 				}
 				?>
+				<div class="like-block">
+					<?php echo do_shortcode('[irecommendthis]'); ?>
+				</div>
 			</div>
 		</div>
 		<div class="right-side">

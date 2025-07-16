@@ -1,4 +1,5 @@
 <?php
+
 /**
  * LegacyTheme functions and definitions
  *
@@ -135,9 +136,11 @@ function legacytheme_scripts()
 {
 	// wp_enqueue_style('legacytheme-style', get_stylesheet_uri(), array(), _S_VERSION);
 	wp_enqueue_style('legacytheme-style', get_template_directory_uri() . '/assets/css/styles.min.css', array(), _S_VERSION);
+	wp_enqueue_style('legacytheme-style-custom', get_template_directory_uri() . '/assets/css/custom.css', array(), _S_VERSION);
 	// wp_style_add_data('legacytheme-style', 'rtl', 'replace');
 
 	wp_enqueue_script('legacytheme-scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), _S_VERSION, true);
+	wp_enqueue_script('legacytheme-custom', get_template_directory_uri() . '/assets/js/custom.js', array(), _S_VERSION, true);
 	if (is_front_page()) {
 		wp_enqueue_script('legacytheme-libs', get_template_directory_uri() . '/assets/js/libs.js', array(), _S_VERSION, true);
 	}
@@ -156,50 +159,96 @@ add_action('enqueue_block_editor_assets', function () {
 	wp_enqueue_style('mytheme/editor', get_template_directory_uri() . '/assets/css/block-editor__container.css');
 });
 
-function my_cptui_add_post_types_to_archives($query)
+// function my_cptui_add_post_types_to_archives($query)
+// {
+// 	if (is_admin() || !$query->is_main_query()) {
+// 		return;
+// 	}
+
+// 	if (is_category() || is_tag() && empty($query->query_vars['suppress_filters'])) {
+// 		$cptui_post_types = cptui_get_post_type_slugs();
+
+// 		$query->set(
+// 			'post_type',
+// 			array_merge(
+// 				array('post'),
+// 				$cptui_post_types
+// 			)
+// 		);
+// 	}
+// }
+// add_filter('pre_get_posts', 'my_cptui_add_post_types_to_archives');
+
+// function my_cptui_add_post_types_to_archives($query)
+// {
+// 	if (is_admin() || !$query->is_main_query()) {
+// 		return;
+// 	}
+
+// 	if (is_category() || is_tag() && empty($query->query_vars['suppress_filters'])) {
+// 		$cptui_post_types = cptui_get_post_type_slugs();
+
+// 		if (is_category()) {
+// 			$query->set('category_name', get_query_var('category_name'));
+// 		}
+
+// 		$query->set(
+// 			'post_type',
+// 			array_merge(
+// 				array('post'),
+// 				$cptui_post_types
+// 			)
+// 		);
+// 	}
+// }
+// add_filter('pre_get_posts', 'my_cptui_add_post_types_to_archives');
+
+
+function my_custom_post_types_to_archives($query)
 {
 	if (is_admin() || !$query->is_main_query()) {
 		return;
 	}
 
-	if (is_category() || is_tag() && empty($query->query_vars['suppress_filters'])) {
-		$cptui_post_types = cptui_get_post_type_slugs();
+	if ((is_category() || is_tag()) && empty($query->query_vars['suppress_filters'])) {
+		$all_custom_post_types = get_post_types(array('_builtin' => false));
 
 		$query->set(
 			'post_type',
 			array_merge(
 				array('post'),
-				$cptui_post_types
+				$all_custom_post_types
 			)
 		);
 	}
 }
-add_filter('pre_get_posts', 'my_cptui_add_post_types_to_archives');
+add_action('pre_get_posts', 'my_custom_post_types_to_archives');
+
+
 
 function get_template_for_category($template)
 {
 
-	if (basename($template) === 'category.php') { // No custom template for this specific term, let's find it's parent
-		// get the current term, e.g. red
+	if (basename($template) === 'category.php') {
 		$term = get_queried_object();
 
-		// check for template file for the page category
+
 		$slug_template = locate_template("category-{$term->slug}.php");
 		if ($slug_template)
 			return $slug_template;
 
-		// if the page category doesn't have a template, then start checking back through the parent levels to find a template for a parent slug
+
 		$term_to_check = $term;
 		while ($term_to_check->parent) {
-			// get the parent of the this level's parent
+
 			$term_to_check = get_category($term_to_check->parent);
 
 			if (!$term_to_check || is_wp_error($term_to_check))
-				break; // No valid parent found
+				break;
 
-			// Use locate_template to check if a template exists for this categories slug
+
 			$slug_template = locate_template("category-{$term_to_check->slug}.php");
-			// if we find a template then return it. Otherwise the loop will check for this level's parent
+
 			if ($slug_template)
 				return $slug_template;
 		}
@@ -232,3 +281,17 @@ if (defined('JETPACK__VERSION')) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+add_image_size('full', 0, 0, false);
+
+
+/* disable auto plugins update */
+add_filter('auto_update_plugin', '__return_false');
+
+
+acf_add_options_page(array(
+	'page_title' => 'Site Settings',
+	'menu_title' => 'Site Settings',
+	'menu_slug' => 'site-settings',
+	'capability' => 'edit_posts',
+	'redirect' => false
+));
